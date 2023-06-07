@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+class QcodeListVM: ObservableObject
+{
+    @Published var Qcodes = [Qcode]()
+}

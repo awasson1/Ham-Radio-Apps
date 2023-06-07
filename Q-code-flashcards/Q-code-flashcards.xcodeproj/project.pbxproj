@@ -12,6 +12,8 @@
 		FFDD8BA02A2EFBF100E00837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDD8B9F2A2EFBF100E00837 /* Assets.xcassets */; };
 		FFDD8BA32A2EFBF100E00837 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDD8BA22A2EFBF100E00837 /* Preview Assets.xcassets */; };
 		FFDD8BB22A30595100E00837 /* QcodeListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDD8BB12A30595100E00837 /* QcodeListVM.swift */; };
+		FFDD8BB62A305BF600E00837 /* QcodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDD8BB52A305BF600E00837 /* QcodeModel.swift */; };
+		FFDD8BB82A305CD100E00837 /* QcodeDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDD8BB72A305CD100E00837 /* QcodeDetailedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		FFDD8B9F2A2EFBF100E00837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFDD8BA22A2EFBF100E00837 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FFDD8BB12A30595100E00837 /* QcodeListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QcodeListVM.swift; sourceTree = "<group>"; };
+		FFDD8BB52A305BF600E00837 /* QcodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QcodeModel.swift; sourceTree = "<group>"; };
+		FFDD8BB72A305CD100E00837 /* QcodeDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QcodeDetailedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 			children = (
 				FFDD8B9B2A2EFBEE00E00837 /* Qcodeflashcardsapp.swift */,
 				FFDD8B9D2A2EFBEE00E00837 /* QcodeList.swift */,
+				FFDD8BB72A305CD100E00837 /* QcodeDetailedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 		FFDD8BB02A30591900E00837 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FFDD8BB52A305BF600E00837 /* QcodeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,8 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDD8BB62A305BF600E00837 /* QcodeModel.swift in Sources */,
 				FFDD8B9E2A2EFBEE00E00837 /* QcodeList.swift in Sources */,
 				FFDD8B9C2A2EFBEE00E00837 /* Qcodeflashcardsapp.swift in Sources */,
+				FFDD8BB82A305CD100E00837 /* QcodeDetailedView.swift in Sources */,
 				FFDD8BB22A30595100E00837 /* QcodeListVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

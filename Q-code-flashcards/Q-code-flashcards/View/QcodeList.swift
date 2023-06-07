@@ -11,7 +11,7 @@ import SwiftUI
 
 struct QcodeList: View {
     
-    @State var showingPopup = false
+    @ObservedObject var vm: QcodeListVM
     
     var body: some View {
         NavigationView
@@ -20,9 +20,10 @@ struct QcodeList: View {
             {
                 ForEach(0..<50)
                 {
-                    Button("Push me! \($0)")
+                    code in
+                    NavigationLink(destination: QcodeDetailedView())
                     {
-                        showingPopup = true
+                        Text("\(code)")
                     }
                 }
             }
