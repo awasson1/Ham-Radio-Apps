@@ -1,6 +1,6 @@
 //
-//  Q_code_flashcardsApp.swift
-//  Q-code-flashcards
+//  Qcodeflashcardsapp.swift
+//  Qcodeflashcards
 //
 //  Created by Anthony Wasson on 6/5/23.
 //
@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct Q_code_flashcardsApp: App {
+struct Qcodeflashcardsapp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            QcodeList()
         }
     }
 }
