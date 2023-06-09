@@ -18,12 +18,12 @@ struct QcodeList: View {
         {
             Form
             {
-                ForEach(0..<50)
+                ForEach(vm.Qcodes)
                 {
-                    code in
-                    NavigationLink(destination: QcodeDetailedView())
+                    qcode in
+                    NavigationLink(destination: QcodeDetailedView(desc: qcode.description))
                     {
-                        Text("\(code)")
+                        Text(qcode.code)
                     }
                 }
             }

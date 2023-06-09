@@ -7,8 +7,10 @@
 
 import Foundation
 
-struct Qcode
+struct Qcode: Identifiable
 {
+    var id: UUID = UUID()
+    
     var code: String
     var description: String
 }
