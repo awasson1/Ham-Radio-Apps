@@ -13,6 +13,9 @@ struct QcodeDetailedView: View {
     
     var body: some View {
         Text(desc ?? "No description found")
+            .padding()
+        
+        Spacer()
     }
 }
 
