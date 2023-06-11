@@ -21,18 +21,55 @@ class QcodeListVM: ObservableObject
         //sorting which may be reused in another version
         //Qcodes = Qcodes.sorted(by: { $0.code < $1.code })
     }
+    
+    func writeFile(_ fileName: String, _ str: String)
+    {
+        let documentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let fileURL = documentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
+        print("File path: \(fileURL.path)")
+        
+        do
+        {
+            try str.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+        }
+        catch let error as NSError
+        {
+            print("Failed to write to URL")
+            print(error)
+        }
+    }
+    
+    func readData() -> String
+    {
+        let fileURL = Bundle.main.path(forResource: "QcodeData", ofType: "txt")
+        var readString = ""
+        
+        do
+        {
+            readString = try String(contentsOfFile: fileURL!, encoding: String.Encoding.utf8)
+        }
+        catch let error as NSError
+        {
+            print("Failed to read file")
+            print(error)
+        }
+        
+        return readString
+    }
         
     init()
     {
-        for num in 0..<10
+        let components = readData().components(separatedBy: "\n")
+        print(components)
+        
+        var line = 0
+        while(line < components.count)
         {
-            add("Q\(num)", "Hello \(num)!")
+            if(components[line] != "&")
+            {
+                add(components[line], components[line + 1] + components[line + 2])
+            }
+            line += 3
         }
-        
-        add("QRA", "Q: What is the name (or call sign) of your station?\n A: The name (or call sign) of my station is ...")
-        
-        add("QRB", "Q: How far are you from my station?\n A: The distance between our stations is ... nautical miles (or km).")
-        
-        //Qcode data will go here
     }
 }
