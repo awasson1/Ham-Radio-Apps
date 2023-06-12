@@ -9,9 +9,12 @@ import SwiftUI
 
 struct QcodeDetailedView: View {
     
+    var code: String?
     var desc: String?
     
     var body: some View {
+        Text(code ?? "No code found")
+            .padding()
         Text(desc ?? "No description found")
             .padding()
         

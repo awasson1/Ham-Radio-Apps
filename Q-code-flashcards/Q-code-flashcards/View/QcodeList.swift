@@ -21,7 +21,7 @@ struct QcodeList: View {
                 ForEach(vm.Qcodes)
                 {
                     qcode in
-                    NavigationLink(destination: QcodeDetailedView(desc: qcode.description))
+                    NavigationLink(destination: QcodeDetailedView(code: qcode.code, desc: qcode.description))
                     {
                         Text(qcode.code)
                     }
