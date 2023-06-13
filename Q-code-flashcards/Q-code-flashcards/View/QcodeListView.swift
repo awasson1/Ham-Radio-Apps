@@ -1,5 +1,5 @@
 //
-//  QcodeList.swift
+//  QcodeListView.swift
 //  Qcodeflashcards
 //  This app is meant to help memorize q-codes by providing codes,
 //  then allowing the user to tap on the code to reveal its meaning
@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-struct QcodeList: View {
+struct QcodeListView: View {
     
     @ObservedObject var vm: QcodeListVM
     
@@ -21,9 +21,14 @@ struct QcodeList: View {
                 ForEach(vm.Qcodes)
                 {
                     qcode in
-                    NavigationLink(destination: QcodeDetailedView(code: qcode.code, desc: qcode.description))
+                    NavigationLink(destination: QcodeDetailedView(code: qcode.code, question: qcode.question, command: qcode.command))
                     {
-                        Text(qcode.code)
+                        HStack
+                        {
+                            Spacer()
+                            Text(qcode.code)
+                            Spacer()
+                        }
                     }
                 }
             }

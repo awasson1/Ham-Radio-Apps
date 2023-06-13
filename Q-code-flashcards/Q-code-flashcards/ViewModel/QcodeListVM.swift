@@ -12,9 +12,9 @@ class QcodeListVM: ObservableObject
 {
     @Published var Qcodes = [Qcode]()
     
-    func add(_ c: String, _ d: String)
+    func add(_ code: String, _ question: String, _ command: String)
     {
-        let tmp = Qcode(code: c, description: d)
+        let tmp = Qcode(code: code, question: question, command: command)
         
         self.Qcodes.append(tmp)
         
@@ -60,14 +60,14 @@ class QcodeListVM: ObservableObject
     init()
     {
         let components = readData().components(separatedBy: "\n")
-        print(components)
+        //print(components)
         
         var line = 0
         while(line < components.count)
         {
             if(components[line] != "&")
             {
-                add(components[line], components[line + 1] + components[line + 2])
+                add(components[line], components[line + 1], components[line + 2])
             }
             line += 3
         }

@@ -11,7 +11,7 @@ import SwiftUI
 struct Qcodeflashcardsapp: App {
     var body: some Scene {
         WindowGroup {
-            QcodeList(vm: QcodeListVM())
+            QcodeListView(vm: QcodeListVM())
         }
     }
 }

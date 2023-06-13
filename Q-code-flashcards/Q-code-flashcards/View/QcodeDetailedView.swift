@@ -9,13 +9,17 @@ import SwiftUI
 
 struct QcodeDetailedView: View {
     
-    var code: String?
-    var desc: String?
+    var code: String
+    var question: String
+    var command: String
     
     var body: some View {
-        Text(code ?? "No code found")
+        Text(code)
+            .font(.title)
             .padding()
-        Text(desc ?? "No description found")
+        Text("Question form: \(question)")
+            .padding()
+        Text("Command form: \(command)")
             .padding()
         
         Spacer()

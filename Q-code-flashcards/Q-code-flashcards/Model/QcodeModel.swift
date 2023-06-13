@@ -12,5 +12,6 @@ struct Qcode: Identifiable
     var id: UUID = UUID()
     
     var code: String
-    var description: String
+    var question: String
+    var command: String
 }
