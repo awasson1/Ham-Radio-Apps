@@ -9,6 +9,8 @@ import SwiftUI
 
 struct QcodeDetailedView: View {
     
+    @Environment(\.dismiss) var dismiss
+    
     var code: String
     var question: String
     var command: String
@@ -17,12 +19,22 @@ struct QcodeDetailedView: View {
         Text(code)
             .font(.title)
             .padding()
-        Text("Question form: \(question)")
-            .padding()
-        Text("Command form: \(command)")
-            .padding()
-        
-        Spacer()
+        Form
+        {
+            Text("Question form: \n\(question)")
+                .padding()
+            Text("Command form: \n\(command)")
+                .padding()
+            Button(action: { self.dismiss() })
+            {
+                HStack
+                {
+                    Spacer()
+                    Text("Return")
+                    Spacer()
+                }
+            }
+        }
     }
 }
 
