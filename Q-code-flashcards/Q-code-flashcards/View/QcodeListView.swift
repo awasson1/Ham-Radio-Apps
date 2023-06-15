@@ -1,6 +1,7 @@
 //
 //  QcodeListView.swift
 //  Qcodeflashcards
+//
 //  This app is meant to help memorize q-codes by providing codes,
 //  then allowing the user to tap on the code to reveal its meaning
 //

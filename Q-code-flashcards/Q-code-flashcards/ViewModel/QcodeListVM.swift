@@ -12,6 +12,7 @@ class QcodeListVM: ObservableObject
 {
     @Published var Qcodes = [Qcode]()
     
+    //adds a Qcode model item to the Qcodes list with given data
     func add(_ code: String, _ question: String, _ command: String)
     {
         let tmp = Qcode(code: code, question: question, command: command)
@@ -22,6 +23,7 @@ class QcodeListVM: ObservableObject
         //Qcodes = Qcodes.sorted(by: { $0.code < $1.code })
     }
     
+    //test function which writes and saves a text file to be used for data storage
     func writeFile(_ fileName: String, _ str: String)
     {
         let documentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
@@ -39,6 +41,7 @@ class QcodeListVM: ObservableObject
         }
     }
     
+    //reads data from the text file in the project, the data must be in the file named "QcodeData.txt"
     func readData() -> String
     {
         let fileURL = Bundle.main.path(forResource: "QcodeData", ofType: "txt")
@@ -57,14 +60,23 @@ class QcodeListVM: ObservableObject
         return readString
     }
         
+    //Takes the data from the text file and separates the information to be usable for the data model
     init()
     {
+        //read the data text file
         let components = readData().components(separatedBy: "\n")
         //print(components)
+        
+        //separate the data into groups of 3 lines
+        //first line contains the code (e.g. QRZ)
+        //second line contains the meaning in question form
+        //third line contains the meaning in command form
+        //the character "&" marks the end of the file
         
         var line = 0
         while(line < components.count)
         {
+            //if it is not the end of the file, add the following 3 lines of data
             if(components[line] != "&")
             {
                 add(components[line], components[line + 1], components[line + 2])

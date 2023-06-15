@@ -2,6 +2,9 @@
 //  QcodeDetailedView.swift
 //  Q-code-flashcards
 //
+//  This app is meant to help memorize q-codes by providing codes,
+//  then allowing the user to tap on the code to reveal its meaning
+//
 //  Created by Anthony Wasson on 6/6/23.
 //
 
